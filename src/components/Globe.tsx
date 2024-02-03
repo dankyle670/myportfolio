@@ -22,6 +22,8 @@ const GlobeComponent = () => {
     "Burkina Faso",
     "South Africa",
     "Tunisia",
+    "Niger",
+    "United Arab Emirates",
   ];
 
   onMount(() => {
