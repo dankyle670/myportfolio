@@ -1,0 +1,107 @@
+.card {
+    font-weight: 300;
+    font-size: 1.25rem;
+    margin: 0;
+  }
+  .card.active {
+    display: block;
+    animation: fadeIn 1s;
+  }
+  @keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+  }
+
+  * {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+  }
+
+  .contact-container {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    background: linear-gradient(#4d9e3c, #fff7f9);
+    font-family: 'outfit';
+  }
+  
+  .contact-left {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 20px;
+  }
+  
+  .contact-left-title h2 {
+    font-weight: 600;
+    color: black;
+    font-size: 40px;
+    margin-bottom: 5px;
+  }
+  
+  .contact-left-title hr {
+    border: none;
+    width: 120px;
+    height: 5px;
+    background-color: black;
+    border-radius: 10px;
+    margin-bottom: 20px;
+  }
+  
+  .contact-inputs {
+    width: 400px;
+    height: 50px;
+    border: none;
+    outline: none;
+    padding-left: 25px;
+    font-weight: 500;
+    color: black;
+    border-radius: 50px;
+  }
+  
+  .contact-left textarea {
+    height: 120px;
+    padding-top: 15px;
+    border-radius: 20px;
+  }
+  
+  .contact-inputs:focus {
+    border: 2px solid black;
+  }
+  
+  .contact-inputs::placeholder {
+    color: black;
+  }
+  
+  .contact-left button {
+    display: flex;
+    align-items: center;
+    padding: 15px 30px;
+    font-size: 16px;
+    color: black;
+    gap: 10px;
+    border: none;
+    border-radius: 50px;
+    background: linear-gradient(270deg, #34790f, #76fa6d);
+    cursor: pointer;
+  }
+  
+  .contact-left button img {
+    height: 15px;
+  }
+  
+  .contact-right img {
+    width: 500px;
+  }
+  
+  @media (max-width: 800px) {
+    .contact-inputs {
+      width: 80vw;
+    }
+  
+    .contact-right {
+      display: none;
+    }
+  }
