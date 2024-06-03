@@ -1,0 +1,19 @@
+# netlify.toml
+[[redirects]]
+  from = "/login"
+  to = "/login"
+  status = 200
+
+[[redirects]]
+  from = "/signup"
+  to = "/signup"
+  status = 200
+
+[[redirects]]
+  from = "/servicesPrice.astro"
+  to = "/servicesPrice.astro"
+  status = 200
+
+[build]
+  publish = "dist"  # Change this if your output folder is different
+  command = "npm run build"  # The build command for Astro
