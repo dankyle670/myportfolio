@@ -13,16 +13,15 @@ export default defineConfig({
   integrations: [
     sitemap(),
     robotsTxt({
-      sitemap: [
-      ],
+      sitemap: [],
     }),
     solidJs(),
     UnoCSS({ injectReset: true }),
-    icon()
+    icon(),
+    netlify(), // Add Netlify adapter for static site generation
   ],
   markdown: {
     remarkPlugins: [remarkReadingTime],
   },
-  output: "server",
-  adapter: netlify(),
+  output: "static", // Generate static HTML files
 });

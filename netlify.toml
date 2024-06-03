@@ -1,16 +1,16 @@
 [[redirects]]
-  from = "src/pages/login"
-  to = "/dist/login/index.html"
+  from = "/login"
+  to = "/login/index.html"
   status = 200
 
 [[redirects]]
-  from = "src/pages/signup"
-  to = "/dist/signup/index.html"
+  from = "/signup"
+  to = "/signup/index.html"
   status = 200
 
 [[redirects]]
-  from = "src/pages/servicesPrice"
-  to = "/dist/servicesPrice/index.html"
+  from = "/servicesPrice"
+  to = "/servicesPrice/index.html"
   status = 200
 
 [build]
