@@ -13,7 +13,7 @@
   to = "/servicesPrice/index.html"
   status = 200
 
-[build]
+[[build]]
   publish = "dist"
   command = "npm run build"
   functions = "netlify/functions"
