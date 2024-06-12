@@ -13,7 +13,7 @@
   // https://astro.build/config
   export default defineConfig({
     integrations: [
-      sitemap('daniel-komoe-dev.netlify.app'),
+      sitemap(),
       robotsTxt({
         sitemap: [],
       }),
