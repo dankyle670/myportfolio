@@ -16,6 +16,11 @@ const posts = (await getCollection("blog")).sort(
   const sequence = [loaderAnimation];
 
   timeline(sequence as TimelineDefinition);
+  //Include the backend interaction script
+  import { attachEventListeners } from '../script/signup-login';
+  if (typeof document !== 'undefined') {
+    document.addEventListener('DOMContentLoaded', attachEventListeners);
+  }
 </script>
 
 <Layout
@@ -129,15 +134,14 @@ const posts = (await getCollection("blog")).sort(
                   </div><div class="col-span-full">
                     <button
                     id="loginn"
-                    onclick="loginUser()"
+                    onclick="attachEventListeners()"
                     class="items-center h-12 justify-center rounded-xl focus-visible:outline-black focus:outline-none inline-flex bg-gray-300 border-2 border-black duration-200 focus-visible:ring-black hover:bg-gray-400 hover:border-black hover:text-black px-6 py-3 text-center text-black w-full"
                     type="submit">Login</button>
                   </div><div>
                     <p class="font-medium text-sm leading-tight text-white">
                       Not a member? <a
                         class="text-accent-500 hover:text-accent-400 ml-3"
-                        href="/signup">Sign up now</a
-                      >
+                        href="/signup">Sign up now</a>
                     </p>
                   </div>
                 </div>
@@ -145,10 +149,7 @@ const posts = (await getCollection("blog")).sort(
             </div>
           </div>
         </div>
-        <script src="https://www.gstatic.com/firebasejs/10.12.1/firebase-app.js"> </script>
-        <script src="https://www.gstatic.com/firebasejs/10.12.1/firebase-auth.js"> </script>
-        <script src="https://www.gstatic.com/firebasejs/10.12.1/firebase-database.js"> </script>
-        <script type="module" src="/src/pages/back-end/signup-login.js" is:inline></script>
+        <script type="module" src="/src/script/signup-login.js" is:inline></script>
       </section>
   </main>
 </Layout>

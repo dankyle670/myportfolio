@@ -19,6 +19,7 @@
     "astro": "^4.0.8",
     "astro-icon": "^1.0.1",
     "astro-robots-txt": "^1.0.0",
+    "firebase": "^10.12.2",
     "mdast-util-to-string": "^4.0.0",
     "netlify-identity-widget": "^1.9.2",
     "react-hot-toast": "^2.4.1",

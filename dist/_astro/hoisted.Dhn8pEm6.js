@@ -1,1 +1,0 @@
-import"https://www.gstatic.com/firebasejs/10.12.1/firebase-database.js";import"https://www.gstatic.com/firebasejs/10.12.1/firebase-auth.js";import"https://www.gstatic.com/firebasejs/10.12.1/firebase-app.js";import{l as o}from"./constants.CbTSZZC9.js";import{d as i}from"./index.es.CNYZmrc_.js";const m=[o];i(m);
