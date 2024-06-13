@@ -15,5 +15,5 @@
 
 [build]
   publish = "./dist"
-  command = "npm run build"
+  command = "sudo npm run build"
   functions = "./netlify/functions"
