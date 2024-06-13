@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://daniel-komoe-dev.netlify.app/sitemap.xml
