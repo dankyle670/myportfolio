@@ -1,3 +1,8 @@
+[build]
+  publish = "dist"
+  command = "npm run build"
+  functions = "/netlify/functions"
+
 [[redirects]]
   from = "/login"
   to = "/login/index.html"
@@ -12,11 +17,6 @@
   from = "/servicesPrice"
   to = "/servicesPrice/index.html"
   status = 200
-
-[build]
-  publish = "./dist"
-  command = "npm run build"
-  functions = "./netlify/functions"
 
 [build.environment]
   NODE_VERSION = "18.20.3"
