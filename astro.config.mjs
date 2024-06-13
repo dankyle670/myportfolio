@@ -10,29 +10,38 @@ import { remarkReadingTime } from "./src/lib/ remark-reading-time.mjs";
 
 // https://astro.build/config
 export default defineConfig({
-  site: 'https://daniel-komoe-dev.netlify.app', // Add your site URL here
   integrations: [
-    sitemap({
-      hostname: 'https://daniel-komoe-dev.netlify.app', // Ensure sitemap has the correct hostname
-    }),
-    robotsTxt({
-      sitemap: ['https://daniel-komoe-dev.netlify.app/sitemap.xml'], // Provide the sitemap URL
-    }),
+    sitemap(),
+    robotsTxt({ sitemap: [] }),
     solidJs(),
     UnoCSS({ injectReset: true }),
     icon(),
-    netlify(), // Netlify adapter for static site generation
+    netlify(),
   ],
   vite: {
-    optimizeDeps: {
-      include: ["@astrojs/solid-js"], // Include solid-js for better optimization
-    },
+    optimizeDeps: { noDiscovery: true },
   },
   markdown: {
     remarkPlugins: [remarkReadingTime],
   },
-  output: "static", // Generate static HTML files
+  output: "static",
+  build: {
+    onEnd: () => {
+      console.log('Build complete. Listing dist directory contents:');
+      const fs = require('fs');
+      const path = require('path');
+      const distPath = path.join(__dirname, 'dist');
+      fs.readdir(distPath, (err, files) => {
+        if (err) {
+          console.error('Error reading dist directory:', err);
+        } else {
+          console.log('dist directory contents:', files);
+        }
+      });
+    }
+  }
 });
+
 
 
 
