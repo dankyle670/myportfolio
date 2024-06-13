@@ -5,7 +5,7 @@
   "scripts": {
     "dev": "astro dev",
     "start": "astro dev",
-    "build": "echo 'Running Astro Build' && astro build && echo 'Astro Build Completed'",
+    "build": "astro build",
     "preview": "astro preview",
     "astro": "astro"
   },
