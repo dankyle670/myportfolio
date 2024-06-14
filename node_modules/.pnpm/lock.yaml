@@ -17,6 +17,9 @@ dependencies:
   '@astrojs/solid-js':
     specifier: ^3.0.3
     version: 3.0.3(solid-js@1.8.7)(vite@4.5.0)
+  '@firebase/app':
+    specifier: ^0.10.5
+    version: 0.10.5
   '@iconify-icons/ri':
     specifier: ^1.2.10
     version: 1.2.10
