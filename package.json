@@ -27,6 +27,7 @@
     "@firebase/functions-compat": "^0.3.11",
     "@firebase/installations": "^0.6.7",
     "@firebase/installations-compat": "^0.2.7",
+    "@firebase/messaging": "^0.12.9",
     "@iconify-icons/ri": "^1.2.10",
     "@iconify-json/ri": "^1.1.18",
     "astro": "^4.0.8",
