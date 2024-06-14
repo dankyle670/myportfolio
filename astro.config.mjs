@@ -5,13 +5,19 @@ import robotsTxt from "astro-robots-txt";
 import UnoCSS from "@unocss/astro";
 import icon from "astro-icon";
 import solidJs from "@astrojs/solid-js";
-//import { remarkReadingTime } from "./src/lib/remark-reading-time.mjs";
 import { remarkReadingTime } from "./src/lib/ remark-reading-time.mjs";
+//import { remarkReadingTime } from "./src/lib/remark-reading-time.mjs";
 
 // https://astro.build/config
 export default defineConfig({
   site: 'https://daniel-komoe-dev.netlify.app', // Add your site URL here
   integrations: [
+    sitemap({
+      hostname: 'https://daniel-komoe-dev.netlify.app', // Ensure sitemap has the correct hostname
+    }),
+    robotsTxt({
+      sitemap: ['https://daniel-komoe-dev.netlify.app/sitemap.xml'], // Provide the sitemap URL
+    }),
     solidJs(),
     UnoCSS({ injectReset: true }),
     icon(),
@@ -19,7 +25,7 @@ export default defineConfig({
   ],
   vite: {
     optimizeDeps: {
-      noDiscovery: true,
+      include: ["@astrojs/solid-js"], // Include solid-js for better optimization
     },
   },
   markdown: {
