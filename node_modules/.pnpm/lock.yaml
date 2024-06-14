@@ -65,6 +65,21 @@ dependencies:
   '@firebase/storage':
     specifier: ^0.12.5
     version: 0.12.5(@firebase/app@0.10.5)
+  '@firebase/storage-compat':
+    specifier: ^0.3.8
+    version: 0.3.8(@firebase/app-compat@0.2.35)(@firebase/app-types@0.9.2)(@firebase/app@0.10.5)
+  '@firebase/storage-types':
+    specifier: ^0.8.2
+    version: 0.8.2(@firebase/app-types@0.9.2)(@firebase/util@1.9.6)
+  '@firebase/util':
+    specifier: ^1.9.6
+    version: 1.9.6
+  '@firebase/vertexai-preview':
+    specifier: ^0.0.2
+    version: 0.0.2(@firebase/app-types@0.9.2)(@firebase/app@0.10.5)
+  '@firebase/webchannel-wrapper':
+    specifier: ^1.0.0
+    version: 1.0.0
   '@iconify-icons/ri':
     specifier: ^1.2.10
     version: 1.2.10
