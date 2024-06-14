@@ -12,12 +12,6 @@ import { remarkReadingTime } from "./src/lib/ remark-reading-time.mjs";
 export default defineConfig({
   site: 'https://daniel-komoe-dev.netlify.app', // Add your site URL here
   integrations: [
-    sitemap({
-      hostname: 'https://daniel-komoe-dev.netlify.app', // Ensure sitemap has the correct hostname
-    }),
-    robotsTxt({
-      sitemap: ['https://daniel-komoe-dev.netlify.app/sitemap.xml'], // Provide the sitemap URL
-    }),
     solidJs(),
     UnoCSS({ injectReset: true }),
     icon(),
@@ -25,7 +19,7 @@ export default defineConfig({
   ],
   vite: {
     optimizeDeps: {
-      include: ["@astrojs/solid-js"], // Include solid-js for better optimization
+      noDiscovery: true,
     },
   },
   markdown: {
