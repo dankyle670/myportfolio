@@ -20,6 +20,9 @@ dependencies:
   '@firebase/app':
     specifier: ^0.10.5
     version: 0.10.5
+  '@firebase/app-compat':
+    specifier: ^0.2.35
+    version: 0.2.35
   '@iconify-icons/ri':
     specifier: ^1.2.10
     version: 1.2.10
