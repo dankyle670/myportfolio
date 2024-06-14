@@ -53,6 +53,9 @@ dependencies:
   '@firebase/installations':
     specifier: ^0.6.7
     version: 0.6.7(@firebase/app@0.10.5)
+  '@firebase/installations-compat':
+    specifier: ^0.2.7
+    version: 0.2.7(@firebase/app-compat@0.2.35)(@firebase/app-types@0.9.2)(@firebase/app@0.10.5)
   '@iconify-icons/ri':
     specifier: ^1.2.10
     version: 1.2.10
