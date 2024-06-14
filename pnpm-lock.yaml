@@ -38,6 +38,9 @@ dependencies:
   '@firebase/database-compat':
     specifier: ^1.0.5
     version: 1.0.5
+  '@firebase/firestore':
+    specifier: ^4.6.3
+    version: 4.6.3(@firebase/app@0.10.5)
   '@iconify-icons/ri':
     specifier: ^1.2.10
     version: 1.2.10
