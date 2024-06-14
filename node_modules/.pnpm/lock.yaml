@@ -164,6 +164,9 @@ dependencies:
   tslib:
     specifier: ^2.6.3
     version: 2.6.3
+  undici:
+    specifier: ^6.19.0
+    version: 6.19.0
 
 devDependencies:
   '@types/d3':
@@ -5706,6 +5709,11 @@ packages:
     engines: {node: '>=14.0'}
     dependencies:
       '@fastify/busboy': 2.1.1
+    dev: false
+
+  /undici@6.19.0:
+    resolution: {integrity: sha512-9gGwbSLgYMjp4r6M5P9bhqhx1E+RyUIHqZE0r7BmrRoqroJUG6xlVu5TXH9DnwmCPLkcaVNrcYtxUE9d3InnyQ==}
+    engines: {node: '>=18.17'}
     dev: false
 
   /unherit@3.0.1:
