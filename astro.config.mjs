@@ -10,6 +10,9 @@ import { remarkReadingTime } from "./src/lib/ remark-reading-time.mjs";
 
 // https://astro.build/config
 export default defineConfig({
+  esbuild: {
+    target: 'esnext'
+  },
   site: 'https://daniel-komoe-dev.netlify.app', // Add your site URL here
   integrations: [
     sitemap({

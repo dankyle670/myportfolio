@@ -1,7 +1,6 @@
 {
   "extends": "astro/tsconfigs/strict",
   "compilerOptions": {
-    "target": "es2020",
     "jsx": "preserve",
     "jsxImportSource": "solid-js"
   }

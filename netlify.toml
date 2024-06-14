@@ -3,6 +3,9 @@
   command = "npm run build"
   functions = "/netlify/functions"
 
+[context.production.environment]
+  NODE_VERSION = "16"
+
 [[redirects]]
   from = "/login"
   to = "/login/index.html"
