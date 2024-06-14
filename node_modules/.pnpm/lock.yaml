@@ -17,9 +17,30 @@ dependencies:
   '@astrojs/solid-js':
     specifier: ^3.0.3
     version: 3.0.3(solid-js@1.8.7)(vite@4.5.0)
+  '@firebase/analytics':
+    specifier: ^0.10.4
+    version: 0.10.4(@firebase/app@0.10.5)
+  '@firebase/analytics-compat':
+    specifier: ^0.2.10
+    version: 0.2.10(@firebase/app-compat@0.2.35)(@firebase/app@0.10.5)
+  '@firebase/analytics-types':
+    specifier: ^0.8.2
+    version: 0.8.2
   '@firebase/app':
     specifier: ^0.10.5
     version: 0.10.5
+  '@firebase/app-check':
+    specifier: ^0.8.4
+    version: 0.8.4(@firebase/app@0.10.5)
+  '@firebase/app-check-compat':
+    specifier: ^0.3.11
+    version: 0.3.11(@firebase/app-compat@0.2.35)(@firebase/app@0.10.5)
+  '@firebase/app-check-interop-types':
+    specifier: ^0.3.2
+    version: 0.3.2
+  '@firebase/app-check-types':
+    specifier: ^0.5.2
+    version: 0.5.2
   '@firebase/app-compat':
     specifier: ^0.2.35
     version: 0.2.35
