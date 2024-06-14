@@ -34,6 +34,7 @@
     "@firebase/messaging-interop-types": "^0.2.2",
     "@firebase/performance": "^0.6.7",
     "@firebase/performance-compat": "^0.2.7",
+    "@firebase/remote-config": "^0.4.7",
     "@firebase/storage": "^0.12.5",
     "@firebase/storage-compat": "^0.3.8",
     "@firebase/storage-types": "^0.8.2",
