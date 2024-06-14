@@ -53,6 +53,7 @@
     "@firebase/util": "^1.9.6",
     "@firebase/vertexai-preview": "^0.0.2",
     "@firebase/webchannel-wrapper": "^1.0.0",
+    "@grpc/grpc-js": "^1.10.9",
     "@iconify-icons/ri": "^1.2.10",
     "@iconify-json/ri": "^1.1.21",
     "astro": "^4.10.2",
