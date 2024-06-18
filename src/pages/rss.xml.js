@@ -9,7 +9,7 @@ export async function GET(context) {
   return rss({
     title: "Gianmarco Cavallo’s Blog",
     description: "my blog",
-    site: "https://daniel-komoe-dev.netlify.app/",
+    site: context.site,
     items: blog.map((post) => ({
       title: post.data.title,
       pubDate: post.data.pubDate,
