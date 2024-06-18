@@ -4,8 +4,35 @@ import Button from "./Button.astro";
 import { LINKS } from "../lib/constants";
 import { Icon } from 'astro-icon/components'
 import Tooltip from "./Tooltip/index";
-import { Image } from "astro:assets";
 ---
+
+<Card colSpan="md:col-span-4" rowSpan="md:row-span-0.5">
+  <section class="bg-black-500 border-b border-black/5">
+    <div class="w-full mx-auto md:px-12 px-8 max-w-7xl lg:px-16">
+        <nav
+          :class="{'flex': open, 'hidden': !open}"
+          class="flex-col items-center flex-grow hidden md:pb-0 md:flex md:justify-end md:flex-row">
+          <p class="m-0 font-light text-xl">
+            You can sign up to receive a 20% discount on each services.
+          </p>
+          <div class="inline-flex items-center gap-2 list-none lg:ml-auto">
+            <a
+              href="/signup"
+              class="block px-4 py-2 mt-2 text-sm font-medium text-white md:mt-0 hover:bg-black hover:text-accent-400 focus:outline-none focus:shadow-outline">
+              Sign up
+            </a>
+            <a
+              href="/login"
+              class="inline-flex items-center h-8 justify-center px-4 py-2 text-sm font-medium text-black bg-gray-100 rounded-lg group focus:outline-none focus-visible:outline-2 focus-visible:outline-offset-2 hover:bg-gray-400 active:bg-white active:text-accent-400 focus-visible:outline-black">
+              Log in
+            </a>
+          </div>
+        </nav>
+      </div>
+    </div>
+  </section>
+</Card>
+
 
 <Card colSpan="md:col-span-3" rowSpan="md:row-span-4">
   <div class="flex w-full h-full">
@@ -13,28 +40,27 @@ import { Image } from "astro:assets";
       <div class="flex flex-col h-full">
         <h6 class="text-sm font-light m-0 text-gray-500">welcome</h6>
         <p class="m-0 font-light text-xl">
-          Hi, I'm <b class="font-bold">Gianmarco Cavallo</b>, a software
-          developer with strong focus on the user experience, animations and
-          micro interactions
+          Hi, I'm <b class="font-bold">Daniel K</b>, a software
+          developer/ Web developer, you need any website or app i'm your guys.
         </p>
       </div>
       <div class="flex gap-4">
-        <a href={LINKS.github} aria-label="github profile" target="_blank">
+        <a href={LINKS.Github} aria-label="github profile" target="_blank">
           <Button aria-label="github profile">
             <Icon name="ri:github-fill" class="h-6" />
             <span class="sr-only">GitHub Profile</span>
           </Button>
         </a>
-        <a href={LINKS.linkedin} aria-label="linkeding profile" target="_blank">
+        <a href={LINKS.Linkedin} aria-label="linkeding profile" target="_blank">
           <Button aria-label="linkedin profile">
             <Icon name="ri:linkedin-box-fill" class="h-6" />
             <span class="sr-only">Linkedin Profile</span>
           </Button>
         </a>
-        <a href={LINKS.dribble} aria-label="dribble profile" target="_blank">
-          <Button aria-label="dribble profile">
-            <Icon name="ri:dribbble-fill" class="h-6" />
-            <span class="sr-only">Dribble Profile</span>
+        <a href={LINKS.Instagram} aria-label="IG profile" target="_blank">
+          <Button aria-label="github profile">
+            <Icon name="ri:instagram-fill" class="h-6" />
+            <span class="sr-only">Instram Profile</span>
           </Button>
         </a>
         <Tooltip client:visible>
@@ -45,7 +71,7 @@ import { Image } from "astro:assets";
         </Tooltip>
       </div>
     </div>
-    <Image
+    <img
       width="300"
       height="300"
       src="/me.webp"
@@ -54,3 +80,4 @@ import { Image } from "astro:assets";
     />
   </div>
 </Card>
+
