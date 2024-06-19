@@ -7,6 +7,30 @@ const posts = (await getCollection("blog")).sort(
   (blogEntryA, blogEntryB) =>
     blogEntryB.data.pubDate.getTime() - blogEntryA.data.pubDate.getTime()
 );
+
+const handleSubmit = async (event) => {
+  event.preventDefault();
+
+  const email = document.getElementById('login_email').value;
+  const password = document.getElementById('login_password').value;
+
+  if (typeof netlifyIdentity !== 'undefined') {
+    try {
+      const user = await netlifyIdentity.login({
+        email,
+        password,
+      });
+      console.log('User logged in:', user);
+      alert('Login successful. Welcome back!');
+
+      // Redirect or perform any necessary action after successful login
+      // Example: window.location.href = '/dashboard';
+    } catch (error) {
+      console.error('Error during login:', error);
+      alert('Error during login: ' + error.message);
+    }
+  }
+};
 ---
 
 <script>
@@ -16,11 +40,6 @@ const posts = (await getCollection("blog")).sort(
   const sequence = [loaderAnimation];
 
   timeline(sequence as TimelineDefinition);
-  //Include the backend interaction script
-  //import { attachEventListeners } from '../script/signup-login';
-  //if (typeof document !== 'undefined') {
-  //  document.addEventListener('DOMContentLoaded', attachEventListeners);
-  //}
 </script>
 
 <Layout
@@ -90,7 +109,8 @@ const posts = (await getCollection("blog")).sort(
                     </div>
                   </div>
                 </div>
-              </div><form>
+              </div>
+              <form on:submit={handleSubmit}>
                 <div class="space-y-6">
                   <div>
                     <label for="name" class="sr-only" name="name"
@@ -134,7 +154,6 @@ const posts = (await getCollection("blog")).sort(
                   </div><div class="col-span-full">
                     <button
                     id="loginn"
-                    onclick="attachEventListeners()"
                     class="items-center h-12 justify-center rounded-xl focus-visible:outline-black focus:outline-none inline-flex bg-gray-300 border-2 border-black duration-200 focus-visible:ring-black hover:bg-gray-400 hover:border-black hover:text-black px-6 py-3 text-center text-black w-full"
                     type="submit">Login</button>
                   </div><div>
@@ -149,7 +168,6 @@ const posts = (await getCollection("blog")).sort(
             </div>
           </div>
         </div>
-        <script type="module" src="../script/signup-login.js"></script>
       </section>
   </main>
 </Layout>

@@ -12,12 +12,6 @@ const posts = (await getCollection("blog")).sort(
   import { loaderAnimation } from "../lib/constants";
   const sequence = [loaderAnimation];
   timeline(sequence as TimelineDefinition);
-  //Include the backend interaction script
-  //import { attachEventListeners } from '../script/signup-login'
-  //if (typeof document !== 'undefined') {
-  //  document.addEventListener('DOMContentLoaded', attachEventListeners);
-  //}
-
 </script>
 <Layout
   title="Daniel Komoe - Blog"
@@ -171,7 +165,6 @@ const posts = (await getCollection("blog")).sort(
           </div>
         </div>
       </div>
-      <script type="module" src="../script/signup-login.js"></script>
     </section>
   </main>
 </Layout>
