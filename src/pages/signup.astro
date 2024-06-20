@@ -7,12 +7,16 @@ const posts = (await getCollection("blog")).sort(
     blogEntryB.data.pubDate.getTime() - blogEntryA.data.pubDate.getTime()
 );
 ---
+
 <script>
   import { timeline, type TimelineDefinition } from "motion";
   import { loaderAnimation } from "../lib/constants";
+
   const sequence = [loaderAnimation];
+
   timeline(sequence as TimelineDefinition);
 </script>
+
 <Layout
   title="Daniel Komoe - Blog"
   description="Software developer with strong focus on the user experience animations and micro interactions"
@@ -168,4 +172,3 @@ const posts = (await getCollection("blog")).sort(
     </section>
   </main>
 </Layout>
-

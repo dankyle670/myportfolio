@@ -12,13 +12,8 @@ const posts = (await getCollection("blog")).sort(
   import { loaderAnimation } from "../lib/constants";
   const sequence = [loaderAnimation];
   timeline(sequence as TimelineDefinition);
-  //Include the backend interaction script
-  import { attachEventListeners } from '../script/signup-login'
-  if (typeof document !== 'undefined') {
-    document.addEventListener('DOMContentLoaded', attachEventListeners);
-  }
-
 </script>
+
 <Layout
   title="Daniel Komoe - Blog"
   description="Software developer with strong focus on the user experience animations and micro interactions"
@@ -156,7 +151,6 @@ const posts = (await getCollection("blog")).sort(
                 </div><div class="col-span-full">
                   <button
                   id="register"
-                  onclick="attachEventListeners()"
                   class="items-center justify-center h-12 rounded-xl focus-visible:outline-black focus:outline-none inline-flex bg-gray-300 border-2 border-black duration-200 focus-visible:ring-black hover:bg-gray-400 hover:border-black hover:text-black px-6 py-3 text-center text-white w-full"
                     >Create an account</button>
                 </div><div class="space-y-4">
@@ -172,7 +166,6 @@ const posts = (await getCollection("blog")).sort(
           </div>
         </div>
       </div>
-      <script type="module" src="/src/script/signup-login.js" is:inline></script>
     </section>
   </main>
 </Layout>

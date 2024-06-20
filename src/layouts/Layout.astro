@@ -5,10 +5,9 @@ interface Props {
   title: string;
   description: string;
   page?: "travel";
-  fullScreen?: string;
 }
 
-const { title, description, page, fullScreen } = Astro.props;
+const { title, description, page } = Astro.props;
 ---
 
 <BasicLayout title={title} description={description}>

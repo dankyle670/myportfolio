@@ -4,44 +4,26 @@ import netlify from "@astrojs/netlify";
 import robotsTxt from "astro-robots-txt";
 import UnoCSS from "@unocss/astro";
 import icon from "astro-icon";
-
 import solidJs from "@astrojs/solid-js";
 import { remarkReadingTime } from "./src/lib/ remark-reading-time.mjs";
 
-import svelte from "@astrojs/svelte";
-
 // https://astro.build/config
 export default defineConfig({
-  site: "https://gianmarco.xyz/",
+  site: 'https://daniel-komoe-dev.netlify.app', // Ensure your site URL is correctly set here
   integrations: [
     sitemap(),
     robotsTxt({
-      sitemap: [
-        "https://gianmarco.xyz/sitemap-index.xml",
-        "https://gianmarco.xyz/sitemap-0.xml",
-      ],
+      sitemap: ['https://daniel-komoe-dev.netlify.app/sitemap.xml'],
     }),
     solidJs(),
     UnoCSS({ injectReset: true }),
     icon(),
-    svelte(),
+    netlify(), // Add Netlify adapter for static site generation
   ],
   markdown: {
     remarkPlugins: [remarkReadingTime],
   },
-  output: "server",
-  adapter: netlify({ edgeMiddleware: true }),
-  vite: {
-    assetsInclude: "**/*.riv",
-    esbuild: {
-      target: "es2020",
-    },
-    resolve: {
-      alias: {
-        "@": "/src",
-      },
-    },
-  },
+  output: "static", // Generate static HTML files
 });
 
 
@@ -56,31 +38,20 @@ export default defineConfig({
 //import solidJs from "@astrojs/solid-js";
 //import { remarkReadingTime } from "./src/lib/ remark-reading-time.mjs";
 //
-//import svelte from "@astrojs/svelte";
-//
 //// https://astro.build/config
 //export default defineConfig({
-//  site: "https://gianmarco.xyz/",
 //  integrations: [
 //    sitemap(),
 //    robotsTxt({
-//      sitemap: [
-//        "https://gianmarco.xyz/sitemap-index.xml",
-//        "https://gianmarco.xyz/sitemap-0.xml",
-//      ],
+//      sitemap: [],
 //    }),
 //    solidJs(),
 //    UnoCSS({ injectReset: true }),
 //    icon(),
-//    svelte(),
+//    netlify(), // Add Netlify adapter for static site generation
 //  ],
 //  markdown: {
 //    remarkPlugins: [remarkReadingTime],
 //  },
-//  output: "server",
-//  adapter: netlify({ edgeMiddleware: true }),
-//  vite: {
-//    assetsInclude: "**/*.riv",
-//  },
+//  output: "static", // Generate static HTML files
 //});
-//

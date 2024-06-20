@@ -1,38 +1,41 @@
-import { defineConfig } from "astro/config";
-import sitemap from "@astrojs/sitemap";
-import netlify from "@astrojs/netlify";
-import robotsTxt from "astro-robots-txt";
-import UnoCSS from "@unocss/astro";
-import icon from "astro-icon";
-import solidJs from "@astrojs/solid-js";
-import { remarkReadingTime } from "./src/lib/ remark-reading-time.mjs";
+//import { defineConfig } from "astro/config";
+//import sitemap from "@astrojs/sitemap";
+//import netlify from "@astrojs/netlify";
+//import robotsTxt from "astro-robots-txt";
+//import UnoCSS from "@unocss/astro";
+//import icon from "astro-icon";
+//import solidJs from "@astrojs/solid-js";
+//import { remarkReadingTime } from "./src/lib/ remark-reading-time.mjs"; // Ensure the path is correct
+//
+//export default defineConfig({
+//  site: 'https://daniel-komoe-dev.netlify.app',
+//  integrations: [
+//    sitemap(),
+//    robotsTxt({
+//      sitemap: 'https://daniel-komoe-dev.netlify.app/sitemap.xml',
+//    }),
+//    solidJs(),
+//    UnoCSS({ injectReset: true }),
+//    icon(),
+//    netlify(),
+//  ],
+//  vite: {
+//    build: {
+//      target: ['es2020', 'chrome90', 'edge90', 'firefox90', 'safari15'],
+//    },
+//    optimizeDeps: {
+//      include: ["@astrojs/solid-js"],
+//    },
+//    esbuild: {
+//      target: ['es2020', 'chrome90', 'edge90', 'firefox90', 'safari15'],
+//    },
+//  },
+//  markdown: {
+//    remarkPlugins: [remarkReadingTime],
+//  },
+//  output: "static",
+//});
 
-// https://astro.build/config
-export default defineConfig({
-  site: 'https://daniel-komoe-dev.netlify.app', // Add your site URL here
-  integrations: [
-    sitemap(),
-    robotsTxt({
-      sitemap: ['https://daniel-komoe-dev.netlify.app/sitemap.xml'], // Provide the sitemap URL
-    }),
-    solidJs(),
-    UnoCSS({ injectReset: true }),
-    icon(),
-    netlify(), // Netlify adapter for static site generation
-  ],
-  vite: {
-    build: {
-      target: ['es2020', 'chrome90', 'edge90', 'firefox90', 'safari15'], // Modern targets
-    },
-    optimizeDeps: {
-      include: ["@astrojs/solid-js"], // Include solid-js for better optimization
-    },
-  },
-  markdown: {
-    remarkPlugins: [remarkReadingTime],
-  },
-  output: "static", // Generate static HTML files
-});
 
 
 //import { defineConfig } from "astro/config";
@@ -43,19 +46,18 @@ export default defineConfig({
 //import icon from "astro-icon";
 //import solidJs from "@astrojs/solid-js";
 //import { remarkReadingTime } from "./src/lib/ remark-reading-time.mjs";
-////import { remarkReadingTime } from "./src/lib/remark-reading-time.mjs";
 //
 //// https://astro.build/config
 //export default defineConfig({
-//  esbuild: {
-//    target: 'esnext'
-//  },
+  //  esbuild: {
+    //    target: 'esnext'
+    //  },
 //  site: 'https://daniel-komoe-dev.netlify.app', // Add your site URL here
 //  integrations: [
-//    sitemap({
-//      hostname: 'https://daniel-komoe-dev.netlify.app', // Ensure sitemap has the correct hostname
-//    }),
-//    robotsTxt({
+  //    sitemap({
+    //      hostname: 'https://daniel-komoe-dev.netlify.app', // Ensure sitemap has the correct hostname
+    //    }),
+    //    robotsTxt({
 //      sitemap: ['https://daniel-komoe-dev.netlify.app/sitemap.xml'], // Provide the sitemap URL
 //    }),
 //    solidJs(),
@@ -73,38 +75,37 @@ export default defineConfig({
 //  },
 //  output: "static", // Generate static HTML files
 //});
-//
 
 
 
-  //import { defineConfig } from "astro/config";
-  //import sitemap from "@astrojs/sitemap";
-  //import netlify from "@astrojs/netlify";
-  //import robotsTxt from "astro-robots-txt";
-  //import UnoCSS from "@unocss/astro";
-  //import icon from "astro-icon";
-//
-  //import solidJs from "@astrojs/solid-js";
-//
-  //// https://astro.build/config
-  //export default defineConfig({
-  //  integrations: [
-  //    sitemap(),
-  //    robotsTxt({
-  //      sitemap: [],
-  //    }),
-  //    solidJs(),
-  //    UnoCSS({ injectReset: true }),
-  //    icon(),
-  //    netlify(), // Add Netlify adapter for static site generation
-  //  ],
-  //  vite: {
-  //    optimizeDeps: {
-  //      noDiscovery: true,
-  //    },
-  //  },
-  //  markdown: {
-  //    remarkPlugins: [remarkReadingTime],
-  //  },
-  //  output: "static", // Generate static HTML files
-  //});
+
+import { defineConfig } from "astro/config";
+import sitemap from "@astrojs/sitemap";
+import netlify from "@astrojs/netlify";
+import robotsTxt from "astro-robots-txt";
+import UnoCSS from "@unocss/astro";
+import icon from "astro-icon";
+import solidJs from "@astrojs/solid-js";
+import { remarkReadingTime } from "./src/lib/ remark-reading-time.mjs";
+
+  // https://astro.build/config
+  export default defineConfig({
+    integrations: [
+      robotsTxt({
+        sitemap: [],
+      }),
+      solidJs(),
+      UnoCSS({ injectReset: true }),
+      icon(),
+      netlify(), // Add Netlify adapter for static site generation
+    ],
+    vite: {
+      optimizeDeps: {
+        noDiscovery: true,
+      },
+    },
+    markdown: {
+      remarkPlugins: [remarkReadingTime],
+    },
+    output: "static", // Generate static HTML files
+  });

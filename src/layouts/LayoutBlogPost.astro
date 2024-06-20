@@ -10,16 +10,12 @@ type Props = MarkdownLayoutProps<{
   minutesRead: string;
 }>;
 
-const { slug } = Astro.params;
 const { frontmatter } = Astro.props;
 ---
 
 <BasicLayout
-  frontmatter={frontmatter}
-  slug={slug}
-  page="blog"
-  title={`Gianmarco Cavallo - ${frontmatter.title}`}
-  description={frontmatter.description}
+  title="Gianmarco Cavallo - Blog"
+  description="Software developer with strong focus on the user experience animations and micro interactions"
 >
   <main class="mx-auto max-w-3xl w-full h-screen p-8 text-neutral-100">
     <a

@@ -7,30 +7,6 @@ const posts = (await getCollection("blog")).sort(
   (blogEntryA, blogEntryB) =>
     blogEntryB.data.pubDate.getTime() - blogEntryA.data.pubDate.getTime()
 );
-
-const handleSubmit = async (event) => {
-  event.preventDefault();
-
-  const email = document.getElementById('login_email').value;
-  const password = document.getElementById('login_password').value;
-
-  if (typeof netlifyIdentity !== 'undefined') {
-    try {
-      const user = await netlifyIdentity.login({
-        email,
-        password,
-      });
-      console.log('User logged in:', user);
-      alert('Login successful. Welcome back!');
-
-      // Redirect or perform any necessary action after successful login
-      // Example: window.location.href = '/dashboard';
-    } catch (error) {
-      console.error('Error during login:', error);
-      alert('Error during login: ' + error.message);
-    }
-  }
-};
 ---
 
 <script>
@@ -109,8 +85,7 @@ const handleSubmit = async (event) => {
                     </div>
                   </div>
                 </div>
-              </div>
-              <form on:submit={handleSubmit}>
+              </div><form>
                 <div class="space-y-6">
                   <div>
                     <label for="name" class="sr-only" name="name"
@@ -160,7 +135,8 @@ const handleSubmit = async (event) => {
                     <p class="font-medium text-sm leading-tight text-white">
                       Not a member? <a
                         class="text-accent-500 hover:text-accent-400 ml-3"
-                        href="/signup">Sign up now</a>
+                        href="/signup">Sign up now</a
+                      >
                     </p>
                   </div>
                 </div>

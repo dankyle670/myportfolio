@@ -7,15 +7,23 @@ const GlobeComponent = () => {
 
   const visitedCountries = [
     "France",
-    "China",
+    "Ivory Coast",
+    "United Kingdom",
+    "Morocco",
     "Italy",
-    "Sri Lanka",
-    "Turkey",
-    "Greece",
-    "Malta",
-    "Hungary",
-    "Portugal",
-    "Marocco",
+    "Spain",
+    "USA",
+    "Belgium",
+    "Algeria",
+    "Germany",
+    "Sweden",
+    "Norway",
+    "Ghana",
+    "Burkina Faso",
+    "South Africa",
+    "Tunisia",
+    "Niger",
+    "United Arab Emirates",
   ];
 
   onMount(() => {
@@ -29,7 +37,7 @@ const GlobeComponent = () => {
       .geoOrthographic()
       .scale(250)
       .center([0, 0])
-      .rotate([0, -30])
+      .rotate([0, -20])
       .translate([width / 2, height / 2]);
 
     const initialScale = projection.scale();
