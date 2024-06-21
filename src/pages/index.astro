@@ -31,6 +31,23 @@ import Globe from "../components/Globe";
   timeline(sequence as TimelineDefinition);
 </script>
 
+<head>
+  <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
+</head>
+
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    if (typeof netlifyIdentity !== 'undefined') {
+      netlifyIdentity.on('init', user => {
+        console.log('Netlify Identity user:', user);
+      });
+      netlifyIdentity.init();
+    } else {
+      console.error("Netlify Identity is not loaded");
+    }
+  });
+</script>
+
 <Layout
   title="Daniel Komoe - Frontend Developer"
   description="Software developer with strong focus on the user experience animations and micro interactions"
