@@ -7,6 +7,7 @@ const posts = (await getCollection("blog")).sort(
     blogEntryB.data.pubDate.getTime() - blogEntryA.data.pubDate.getTime()
 );
 ---
+
 <script>
   import { timeline, type TimelineDefinition } from "motion";
   import { loaderAnimation } from "../lib/constants";
@@ -15,41 +16,6 @@ const posts = (await getCollection("blog")).sort(
 
   timeline(sequence as TimelineDefinition);
 </script>
-
-<head>
-  <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
-</head>
-
-  <script>
-    document.addEventListener("DOMContentLoaded", function () {
-    if (typeof netlifyIdentity !== 'undefined') {
-      netlifyIdentity.on('init', user => {
-        console.log('Netlify Identity user:', user);
-      });
-      netlifyIdentity.init();
-
-      const signupForm = document.getElementById('signup-form');
-      signupForm.addEventListener('submit', function(event) {
-        event.preventDefault();
-        const email = event.target.email.value;
-        const password = event.target.password.value;
-
-        netlifyIdentity.signup(email, password)
-          .then(user => {
-            console.log('Signed up user:', user);
-            // Redirect or show a success message
-          })
-          .catch(err => {
-            console.error('Signup error:', err);
-            // Show an error message to the user
-          });
-        });
-      } else {
-        console.error("Netlify Identity is not loaded");
-      }
-    });
-  </script>
-
 
 <Layout
   title="Daniel Komoe - Sign Up"
@@ -217,4 +183,34 @@ const posts = (await getCollection("blog")).sort(
       </div>
     </section>
   </main>
+  <script>
+    import netlifyIdentity from 'netlify-identity-widget';
+
+  document.addEventListener("DOMContentLoaded", function () {
+  netlifyIdentity.init({
+    container: '#netlify-modal', // Optional: Specify a container for the widget
+    locale: 'en' // Optional: Specify the locale
+  });
+
+  netlifyIdentity.on('init', user => {
+    console.log('Netlify Identity user:', user);
+  });
+
+  const signupForm = document.getElementById('signup-form');
+  signupForm.addEventListener('submit', function(event) {
+    event.preventDefault();
+    const email = event.target.email.value;
+    const password = event.target.password.value;
+
+    netlifyIdentity.signup({ email, password })
+      .then(user => {
+        console.log('Signed up user:', user);
+        netlifyIdentity.open('login'); // Open login modal after signup
+      })
+      .catch(err => {
+        console.error('Signup error:', err);
+      });
+  });
+});
+  </script>
 </Layout>

@@ -18,40 +18,6 @@ const posts = (await getCollection("blog")).sort(
   timeline(sequence as TimelineDefinition);
 </script>
 
-<head>
-  <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
-</head>
-
-<script>
-  document.addEventListener("DOMContentLoaded", function () {
-    if (typeof netlifyIdentity !== 'undefined') {
-      netlifyIdentity.on('init', user => {
-        console.log('Netlify Identity user:', user);
-      });
-      netlifyIdentity.init();
-
-      const loginForm = document.getElementById('login-form');
-      loginForm.addEventListener('submit', function(event) {
-        event.preventDefault();
-        const email = event.target.login_email.value;
-        const password = event.target.login_password.value;
-
-        netlifyIdentity.login(email, password)
-          .then(user => {
-            console.log('Logged in user:', user);
-            // Redirect or show a success message
-          })
-          .catch(err => {
-            console.error('Login error:', err);
-            // Show an error message to the user
-          });
-      });
-    } else {
-      console.error("Netlify Identity is not loaded");
-    }
-  });
-</script>
-
 <Layout
   title="Daniel Komoe - Login"
   description="Login to access more features"
@@ -204,4 +170,35 @@ const posts = (await getCollection("blog")).sort(
       </div>
     </section>
   </main>
+  <script>
+    import netlifyIdentity from 'netlify-identity-widget';
+  
+      document.addEventListener("DOMContentLoaded", function () {
+        if (typeof netlifyIdentity !== 'undefined') {
+          netlifyIdentity.on('init', user => {
+            console.log('Netlify Identity user:', user);
+          });
+          netlifyIdentity.init();
+    
+          const loginForm = document.getElementById('login-form');
+          loginForm.addEventListener('submit', function(event) {
+            event.preventDefault();
+            const email = event.target.login_email.value;
+            const password = event.target.login_password.value;
+    
+            netlifyIdentity.login(email, password)
+              .then(user => {
+                console.log('Logged in user:', user);
+                // Redirect or show a success message
+              })
+              .catch(err => {
+                console.error('Login error:', err);
+                // Show an error message to the user
+              });
+          });
+        } else {
+          console.error("Netlify Identity is not loaded");
+        }
+      });
+    </script>
 </Layout>

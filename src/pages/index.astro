@@ -31,22 +31,6 @@ import Globe from "../components/Globe";
   timeline(sequence as TimelineDefinition);
 </script>
 
-<head>
-  <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
-</head>
-
-<script>
-  document.addEventListener("DOMContentLoaded", function () {
-    if (typeof netlifyIdentity !== 'undefined') {
-      netlifyIdentity.on('init', user => {
-        console.log('Netlify Identity user:', user);
-      });
-      netlifyIdentity.init();
-    } else {
-      console.error("Netlify Identity is not loaded");
-    }
-  });
-</script>
 
 <Layout
   title="Daniel Komoe - Frontend Developer"
@@ -87,4 +71,18 @@ import Globe from "../components/Globe";
       </p>
     </Card>
   </main>
+  <script>
+    import netlifyIdentity from 'netlify-identity-widget';
+
+    document.addEventListener("DOMContentLoaded", function () {
+    netlifyIdentity.init({
+    container: '#netlify-modal', // Optional: Specify a container for the widget
+    locale: 'en' // Optional: Specify the locale
+  });
+
+    netlifyIdentity.on('init', user => {
+    console.log('Netlify Identity user:', user);
+  });
+});
+  </script>
 </Layout>
