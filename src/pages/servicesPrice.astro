@@ -9,20 +9,53 @@ import Layout from "../layouts/Layout.astro";
     import { loaderAnimation } from "../lib/constants";
     const sequence = [loaderAnimation];
     timeline(sequence as TimelineDefinition);
-</script>
+  </script>
+
+<script>
+  import netlifyIdentity from 'netlify-identity-widget';
+
+  document.addEventListener("DOMContentLoaded", function () {
+  const netlifyModal = document.getElementById('netlify-modal');
+
+    if (netlifyModal) {
+    netlifyIdentity.init({
+      container: '#netlify-modal', // Ensure this element exists
+      locale: 'en' // Optional: Specify the locale
+    });
+    netlifyIdentity.on('init', user => {
+      console.log('Netlify Identity user:', user);
+    });
+    //netlifyIdentity.init(); // Initialize Netlify Identity
+  }
+
+    const logoutButton = document.getElementById('logout-button');
+    if (logoutButton) {
+      logoutButton.addEventListener('click', function(event) {
+        event.preventDefault();
+        netlifyIdentity.logout(); // Logout from Netlify Identity
+        window.location.href = '/'; // Redirect to the main page
+      });
+    } else {
+      console.error("Logout button not found.");
+    }
+  });
+  </script>
+
 
 
 
 <Layout
   title="Daniel Komoe - Blog"
-  description="Software developer with strong focus on the user experience animations and micro interactions"
->
+  description="Software developer with strong focus on the user experience animations and micro interactions">
+  
   <main
     class="w-screen h-screen flex flex-col justify-start items-start max-w-7xl mx-auto p-8">
-    <a
-      href="/"
-      class="text-white bg-neutral-900 hover:bg-neutral-800 px-4 py-2 mb-8 border-1 border-solid border-neutral-600 rounded-lg"
-      >log out</a>
+    <button
+     id="logout-button"
+      type="button"
+      class="text-white bg-neutral-900 hover:bg-neutral-800 px-4 py-2 mb-8 border-1 border-solid border-neutral-600 rounded-lg">
+      Logout
+    </button>
 
       <Card colSpan="md:col-span-4" rowSpan="md:row-span-0.5">
         <section class="bg-black-500 border-b border-black/5">
