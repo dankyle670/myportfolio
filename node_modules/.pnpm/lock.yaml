@@ -52,6 +52,9 @@ devDependencies:
   '@types/d3':
     specifier: ^7.4.3
     version: 7.4.3
+  '@types/netlify-identity-widget':
+    specifier: ^1.9.6
+    version: 1.9.6
   '@unocss/astro':
     specifier: ^0.58.2
     version: 0.58.2(vite@4.5.0)
@@ -1617,6 +1620,10 @@ packages:
   /@types/ms@0.7.34:
     resolution: {integrity: sha512-nG96G3Wp6acyAgJqGasjODb+acrI7KltPiRxzHPXnP3NgI28bpQDRv53olbqGXbfcgF5aiiHmO3xpwEpS5Ld9g==}
     dev: false
+
+  /@types/netlify-identity-widget@1.9.6:
+    resolution: {integrity: sha512-MGRmGSQov+Udx3hwpWHu2Wxxvq00e3MywsJ9rkpI/tgOyhyhmpcbcBKeM6NRXGUgbrnqJfiiU/hOJQTvqg+r7g==}
+    dev: true
 
   /@types/nlcst@1.0.4:
     resolution: {integrity: sha512-ABoYdNQ/kBSsLvZAekMhIPMQ3YUZvavStpKYs7BjLLuKVmIMA0LUgZ7b54zzuWJRbHF80v1cNf4r90Vd6eMQDg==}

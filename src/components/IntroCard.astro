@@ -16,20 +16,21 @@ import Tooltip from "./Tooltip/index";
             You can sign up to receive a 20% discount on each services.
           </p>
           <div class="inline-flex items-center gap-2 list-none lg:ml-auto">
-            <a
-              href="/signup"
+            <button
+              id="signup-button"
               class="block px-4 py-2 mt-2 text-sm font-medium text-white md:mt-0 hover:bg-black hover:text-accent-400 focus:outline-none focus:shadow-outline">
               Sign up
-            </a>
-            <a
-              href="/login"
+            </button>
+            <button
+              id="login-button"
               class="inline-flex items-center h-8 justify-center px-4 py-2 text-sm font-medium text-black bg-gray-100 rounded-lg group focus:outline-none focus-visible:outline-2 focus-visible:outline-offset-2 hover:bg-gray-400 active:bg-white active:text-accent-400 focus-visible:outline-black">
               Log in
-            </a>
+            </button>
           </div>
         </nav>
       </div>
     </div>
+    <script type="module" src="src/script/auth-netlify-identity.js"></script>
   </section>
 </Card>
 
