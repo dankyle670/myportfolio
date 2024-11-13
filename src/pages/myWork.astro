@@ -1,0 +1,126 @@
+---
+import Card from "../components/Card/index.astro";
+import { LINKS } from "../lib/constants";
+import Layout from "../layouts/Layout.astro";
+
+const projects = [
+  {
+    title: "sipress website",
+    description: "Complete development of the Sipress website, including the design of the user interface (UI) and user experience (UX). The website will showcase the company’s expertise in the fields of oil, agriculture, and real estate.",
+    link: "https://sipress.netlify.app",
+  },
+  {
+    title: "sgir-website",
+    description: "Complete development of the website, including the design of the user interface (UI) and user experience (UX). Integration of specific features to meet the company's needs.",
+    link: "https://sgir-websit.netlify.app",
+  },
+  {
+    title: "farm manager",
+    description: "Farm Manager is an intuitive tool designed to streamline farm operations and maximize productivity. It provides farmers with essential tools to track crop performance, manage resources efficiently, and monitor financials, all in one centralized platform.",
+    link: "https://farme-manager.netlify.app",
+  },
+];
+
+const currentProject = {
+  title: "ivoire artisans",
+  description: "Ivoire Artisans is a mobile application that connects skilled artisans with clients in Côte d'Ivoire. The app offers a platform for artisans to showcase their work, manage payments, and grow their businesses, while clients can easily find trusted professionals for construction, interior decoration, and other services.",
+  logo: "/ivoire-artisanslogo.webp",
+};
+
+const myGoal = {
+  title: "DK GROUP.",
+  description: "DK Group is a dynamic and diversified company with ventures in various industries, including oil, agriculture, real estate, and technology. Under the DK Group umbrella, we manage Ivoire Artisans, an innovative platform connecting skilled artisans with clients, and Sipress, a company focused on oil, agriculture, and real estate. We are committed to driving growth and creating value through our wide-ranging projects, always striving to make a positive impact in every field we engage in.",
+  logo: "/dkgroup-logo.png",
+  logo1: "/sipress_logo.jpg",
+  logo2: "/ivoire-artisanslogo.webp",
+
+
+};
+---
+
+<script>
+    import { timeline, type TimelineDefinition } from "motion";
+    import { loaderAnimation } from "../lib/constants";
+    const sequence = [loaderAnimation];
+    timeline(sequence as TimelineDefinition);
+</script>
+
+<Layout
+  title="Daniel Komoe - Blog"
+  description="Software developer with strong focus on the user experience animations and micro interactions">
+<main class="w-screen h-screen flex flex-col justify-start items-start max-w-7xl mx-auto p-8">
+
+<Card colSpan="md:col-span-4" rowSpan="md:row-span-0.5">
+  <section class="bg-black-500 border-b border-black/5">
+    <div class="w-full mx-auto md:px-12 px-8 max-w-7xl lg:px-16">
+        <nav
+          :class="{'flex': open, 'hidden': !open}"
+          class="flex-col items-center flex-grow hidden md:pb-0 md:flex md:justify-center md:flex-row">
+          <p class="m-0 font-light text-xl text-white">
+            Delivering Excellence with the Best Technology and Optimized Solutions for Every Project.
+          </p>
+        </nav>
+      </div>
+    </div>
+  </section>
+</Card>
+
+<Card colSpan="md:col-span-4" rowSpan="md:row-span-0.5">
+  <section class="bg-black-500 border-b border-black/5 p-6">
+    <h2 class="text-2xl text-white font-semibold mb-4">My Projects</h2>
+    <div class="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+      {projects.map((project, index) => (
+        <div class="project-card bg-white p-4 rounded-lg shadow-lg transition-transform duration-300 transform hover:scale-105 hover:shadow-xl">
+          <h3 class="text-lg font-bold">{project.title}</h3>
+          <p class="text-sm text-gray-600">{project.description}</p>
+          <a href={project.link} target="_blank" class="text-blue-500 text-sm mt-2 block hover:underline">
+            View Project
+          </a>
+        </div>
+      ))}
+    </div>
+  </section>
+</Card>
+
+      {/* Current Project Card */}
+<Card colSpan="md:col-span-4" rowSpan="md:row-span-0.5">
+  <section class="bg-black-500 border-b border-black/5 p-6">
+    <h2 class="text-2xl text-white font-semibold mb-4">My current Project</h2>
+    <div class="project-card bg-white p-10 rounded-lg shadow-lg transition-transform duration-300 transform hover:scale-105 hover:shadow-xl">
+      <h3 class="text-lg font-bold">{currentProject.title}</h3>
+      <p class="text-sm text-gray-600">{currentProject.description}</p>
+      <img src={currentProject.logo} alt="Project Logo" class="w-32 h-32 l-16 ml-auto" />
+      <a target="_blank" class="text-blue-500 text-sm mt-2 block hover:underline">
+        in development
+      </a>
+    </div>
+  </section>
+</Card>
+
+ {/* my goals card */}
+
+<Card colSpan="md:col-span-4" rowSpan="md:row-span-0.5">
+  <section class="bg-black-500 border-b border-black/5 p-6">
+    <h2 class="text-2xl text-white font-semibold mb-4">My goals </h2>
+    <div class="project-card bg-white p-10 rounded-lg shadow-lg transition-transform duration-300 transform hover:scale-105 hover:shadow-xl flex flex-col items-center">
+      <h3 class="text-lg font-bold">{myGoal.title}</h3>
+      <p class="text-sm text-gray-600">{myGoal.description}</p>
+      <img src={myGoal.logo} alt="Project Logo" class="w-100 h-70" />
+    </div>
+    <h2 class="text-2xl text-white font-semibold mb-4 text-center ">Uniting Strengths, Building a Stronger Future </h2>
+
+    <div class="project-card bg-white p-10 rounded-lg shadow-lg transition-transform duration-300 transform hover:scale-105 hover:shadow-xl">
+      <div class="flex space-x-20 justify-center">
+        <img src={myGoal.logo1} alt="Project Logo" class="w-22 h-22" />
+        <img src={myGoal.logo2} alt="Project Logo" class="w-22 h-22" />
+      </div>
+    </div>
+  </section>
+</Card>
+
+</main>
+</Layout>
+
+
+
+
